@@ -25,4 +25,3 @@ output "bastion_id" {
 output "bastion_eip" {
   value = module.instances.bastion_eip
 }
-
