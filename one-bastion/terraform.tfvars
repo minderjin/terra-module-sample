@@ -8,7 +8,8 @@ profile = "default"
 region = "ap-northeast-2"
 
 tags = {
-  MadeBy = "mzc-ckj"
+  Terraform   = "true"
+  Environment = "dev"
 }
 
 
@@ -16,7 +17,7 @@ tags = {
 # Project name #
 ################
 
-name = "module-sample"
+name = "module-sample-one"
 
 
 ###################

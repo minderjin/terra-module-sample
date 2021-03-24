@@ -27,7 +27,7 @@
 ####################
 
 region = "ap-northeast-2"
-name   = "terraexam"
+name   = "module-sample-two"
 
 tags = {
   Terraform   = "true"
