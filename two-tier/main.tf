@@ -109,11 +109,11 @@ module "was_sg" {
   computed_ingress_with_source_security_group_id = [
     {
       rule                     = "http-80-tcp"
-      source_security_group_id = "${module.alb_sg.this_security_group_id}"
+      source_security_group_id = module.alb_sg.this_security_group_id
     },
     {
       rule                     = "ssh-tcp"
-      source_security_group_id = "${module.bastion_sg.this_security_group_id}"
+      source_security_group_id = module.bastion_sg.this_security_group_id
     },
   ]
   # Number of computed ingress rules to create where 'source_security_group_id' is used
@@ -365,7 +365,7 @@ module "rds" {
   #   https://registry.terraform.io/modules/terraform-aws-modules/rds/aws/latest
   #
   source  = "terraform-aws-modules/rds/aws"
-  version = "2.20.0"
+  version = "2.34.0"
 
   identifier = "${var.name}-rds"
 
@@ -378,7 +378,7 @@ module "rds" {
   storage_encrypted = var.rds_storage_encrypted
 
   # kms_key_id        = "arm:aws:kms:<region>:<account id>:key/<kms key id>"
-  name                   = "${var.name}"
+  name                   = var.name
   username               = var.rds_username
   password               = var.rds_password
   port                   = var.rds_port
@@ -396,6 +396,7 @@ module "rds" {
   # DB subnet group
   #   subnet_ids = database_subnet_group
   db_subnet_group_name = local.database_subnet_group
+  create_db_subnet_group = false
 
   # DB parameter group
   family = var.rds_param_family
