@@ -171,6 +171,7 @@ rds_storage_encrypted = false
 
 
 # kms_key_id        = "arm:aws:kms:<region>:<account id>:key/<kms key id>"
+rds_db_name            = "mydb"
 rds_username           = "admin"
 rds_password           = "YourPwdShouldBeLongAndSecure!"
 rds_port               = "3306"

@@ -378,7 +378,7 @@ module "rds" {
   storage_encrypted = var.rds_storage_encrypted
 
   # kms_key_id        = "arm:aws:kms:<region>:<account id>:key/<kms key id>"
-  name                   = var.name
+  name                   = var.rds_db_name
   username               = var.rds_username
   password               = var.rds_password
   port                   = var.rds_port
@@ -395,7 +395,7 @@ module "rds" {
 
   # DB subnet group
   #   subnet_ids = database_subnet_group
-  db_subnet_group_name = local.database_subnet_group
+  db_subnet_group_name   = local.database_subnet_group
   create_db_subnet_group = false
 
   # DB parameter group
