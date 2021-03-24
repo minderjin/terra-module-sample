@@ -405,7 +405,7 @@ module "rds" {
   major_engine_version = var.rds_option_major_engine_version
 
   # Snapshot name upon DB deletion
-  final_snapshot_identifier = "${var.name}-rds-last-snapshop"
+  # final_snapshot_identifier = join("", [var.name, "-last-", formatdate("YYYYMMMDDhhmmss", timestamp())])
 
   # Database Deletion Protection
   deletion_protection = var.rds_deletion_protection
