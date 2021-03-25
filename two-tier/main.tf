@@ -406,6 +406,7 @@ module "rds" {
 
   # Snapshot name upon DB deletion
   # final_snapshot_identifier = join("", [var.name, "-last-", formatdate("YYYYMMMDDhhmmss", timestamp())])
+  # skip_final_snapshot = true
 
   # Database Deletion Protection
   deletion_protection = var.rds_deletion_protection
