@@ -80,7 +80,7 @@ ec2_ami = "ami-0133b1a5b9ca9be36"
 // ec2_ami = "ami-0f2c9898ff2564e90"   
 
 
-ec2_volume_size = 10
+ec2_volume_size = 30
 
 allow_ip_address = [
   "0.0.0.0/0",        #Anywhere
